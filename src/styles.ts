@@ -1,6 +1,8 @@
 // ASSIM É FEITO PARA CRIAMOS UMA ESTILIZAÇÃO GERAL DO DOM, NESTE CASO PARA CRIAR A ESTILIZAÇÃO QUE FAZEMOS NORMALMENTE DO *{} E REDEFINIR O MARGIN, PADDING E ESSAS COISAS.
 import styled, { createGlobalStyle } from 'styled-components'
 
+import { Theme } from './themes/dark'
+
 const EstiloGlobal = createGlobalStyle`
   *{
     margin: 0;
@@ -11,6 +13,9 @@ const EstiloGlobal = createGlobalStyle`
 
   body {
     padding: 80px 0;
+    
+    // TEMOS QUE PASSAR DESTA FORMA O ESTILO CRIADO DOS TEMAS DARK E LIGHT, CONFORME O Theme IMPORTADO LÁ EM CIMA, ONDE IMPORTAMOS A TIPAGEM DO TYPESCRIPT DOS TEMAS.
+    background-color: ${(props) => (props.theme as Theme).corDeFundo};
 
     @media (max-width: 768px) {
       padding-top: 16px;

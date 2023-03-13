@@ -2,9 +2,14 @@ import Avatar from '../../components/Avatar'
 import { SidebarContainer } from '../../components/Avatar/style'
 import Paragrafo from '../../components/Paragrafo'
 import Titulo from '../../components/Titulo'
+
 import { BotaoTema, Descricao } from './styles'
 
-const Sidebar = () => (
+type Props = {
+  trocaTema: () => void //AQUI É A TIPAGEM QUE RECEBERÁ A FUNÇÃO CRIADA NO App.tsx DE TROCAR DE TEMA, E O VOID É POIS RECEBE UM RETORNO VAZIO DE INICIO, E ENTÃO TEMOS QUE PASSAR PARA A CONST ABAIXO RECEBER ESTA TIPAGEM, SENDO props: Props.
+}
+
+const Sidebar = (props: Props) => (
   <aside>
     <SidebarContainer>
       <Avatar />
@@ -16,7 +21,7 @@ const Sidebar = () => (
       <Descricao fontSize={12} tipo="principal">
         Engenheiro Front-end
       </Descricao>
-      <BotaoTema>Trocar tema</BotaoTema>
+      <BotaoTema onClick={props.trocaTema}>Trocar tema</BotaoTema>
     </SidebarContainer>
   </aside>
 )

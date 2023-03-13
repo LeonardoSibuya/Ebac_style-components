@@ -5,14 +5,14 @@ import Titulo from '../Titulo'
 
 //SE FORMOS UTILIZAR DESTA FORMA, DE ESTILIZAR NO MESMO ARQUIVO DO COMPONENTE, PRECISAMOS SEMPRE FAZER A ESTILIZAÇÃO ANTES DO CODIGO DO COMPONENTE, IGUAL DESTA FORMA.
 const Card = styled.div`
-  border: 1px solid #c1c1c1;
+  border: 1px solid ${(props) => props.theme.corDaBorda};
   padding: 16px;
 `
 
 const LinkBotao = styled.a`
-  color: #fff;
+  color: ${(props) => props.theme.corDeFundo};
   font-size: 14px;
-  background-color: #4476bf;
+  background-color: ${(props) => props.theme.corDeFundoBotao};
   text-decoration: none;
   padding: 8px;
   cursor: pointer;
